@@ -35,8 +35,6 @@ def set_forlder(forlder_path: str, topics: list) -> None:
             os.makedirs(forlder_path + topic)
         except FileExistsError:
             pass
-    else:
-        print("Файлы созданы")
 
 
 def main() -> None:
@@ -47,6 +45,8 @@ def main() -> None:
     set_forlder(forlder_path, topics)
 
     shutil.copy("help.txt", f"{forlder_path}/help.txt")
+
+    print("Файлы созданы")
 
 
 if __name__ == "__main__":
