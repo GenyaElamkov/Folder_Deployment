@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "folder-deployment"
+version = "0.1.0"
+description = "Creates folders to work in the directory where the script is located."
+authors = ["GenyaElamkov <genyaelamkov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

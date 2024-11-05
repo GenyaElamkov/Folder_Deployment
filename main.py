@@ -1,8 +1,13 @@
 import os
 import shutil
 
-def get_folders_path(topic_file: str) -> list:
 
+def get_folders_path(topic_file: str) -> list:
+    """
+    Function for getting a list of folder paths from a file
+    topic_file: str - path to file with topics
+    Returns a list of strings - folder paths
+    """
     with open(topic_file, mode="r", encoding="utf-8") as file:
 
         topics = []
@@ -19,6 +24,12 @@ def get_folders_path(topic_file: str) -> list:
 
 
 def set_forlder(forlder_path: str, topics: list) -> None:
+    """
+    Function for creating folders in a given path
+    forlder_path: str - path to parent folder
+    topics: list - list of folder paths to create
+    Returns None
+    """
     for topic in topics:
         try:
             os.makedirs(forlder_path + topic)
@@ -35,7 +46,8 @@ def main() -> None:
     topics = get_folders_path(topics_file)
     set_forlder(forlder_path, topics)
 
-    shutil.copy('help.txt', f"{forlder_path}/help.txt")
+    shutil.copy("help.txt", f"{forlder_path}/help.txt")
+
 
 if __name__ == "__main__":
     main()
